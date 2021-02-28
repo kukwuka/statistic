@@ -1,6 +1,6 @@
-#Это тестовое задание в команду Trade Marketing
+# Это тестовое задание в команду Trade Marketing
 
-##Запуск контейнеров 
+## Запуск контейнеров 
 ```bash
 docker-compose up
 ```
@@ -16,10 +16,10 @@ docker-compose up
 migrate -path ./schemas -database postgres://statistic:statistic@localhost:5436/statistic?sslmode=disable up
 ```
 
-##Методы API
+## Методы API
 После запуска контейнеров , все методы будут работать по адресу localhost:8081/statistic/
 
-###Метод добавления статистики 
+### Метод добавления статистики 
 по адресу localhost:8081/statistic/ отправляйте POST запрос с body
 ```json
 {
@@ -35,7 +35,7 @@ migrate -path ./schemas -database postgres://statistic:statistic@localhost:5436/
 {"date":"2018-01-03T00:00:00Z","views":13,"clicks":13,"cost":12.041}
 ```
 
-###Метод получения статистики 
+### Метод получения статистики 
 по адресу localhost:8081/statistic/ отправляйте GEt запрос параметрами в URL
 обязательные параметры from,to; необязательные sortby.
 Пример запроса
@@ -44,7 +44,7 @@ localhost:8081/statistic/?from=1999-02-18&to=2021-02-19&sortby=date
 ```
 в ответ получите json и 200 статус
 
-###Метод удаление статистики 
+### Метод удаление статистики 
 по адресу localhost:8081/statistic/ отправляйте DELETE запрос
 
 при успешном удалении получите ответ 
@@ -53,7 +53,7 @@ localhost:8081/statistic/?from=1999-02-18&to=2021-02-19&sortby=date
 "deleted"
 ```
 
-###Тесты 
+### Тесты 
 Для запуска теста локально введите команду 
 ```bash
 go test ./...
